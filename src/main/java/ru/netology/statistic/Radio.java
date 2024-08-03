@@ -1,12 +1,19 @@
 package ru.netology.statistic;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor
+@Data
+
 public class Radio {
     private int currentStation;
     private int volume;
     private final int stations;
 
-    public Radio( int station ) {
-            this.stations = station;
+    public Radio(int stations) {
+            this.stations = stations;
             this.currentStation = 0;
             this.volume = 50;
         }
@@ -15,9 +22,6 @@ public class Radio {
             this.stations = 10;
             this.currentStation = 0;
             this.volume = 50;
-        }
-        public int getCurrentStation () {
-            return currentStation;
         }
 
         public void setCurrentStation ( int currentStation){
@@ -32,10 +36,6 @@ public class Radio {
 
         public void prev () {
             currentStation = (stations + currentStation - 1) % stations;
-        }
-
-        public int getVolume () {
-            return volume;
         }
 
         public void increaseVolume () {
