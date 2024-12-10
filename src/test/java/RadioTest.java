@@ -1,6 +1,7 @@
 package ru.netology.statistic;
 
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class RadioTest {
@@ -15,6 +16,12 @@ public class RadioTest {
         Radio radio = new Radio();
         radio.setCurrentStation(5);
         assertEquals(5, radio.getCurrentStation());
+    }
+
+    @Test
+    public void testSetMaxStation() {
+        Radio radio = new Radio(10);
+        assertEquals(0, radio.getCurrentStation());
     }
 
     @Test
@@ -86,7 +93,7 @@ public class RadioTest {
     @Test
     public void testSetCurrentStationNegative() {
         Radio radio = new Radio();
-        radio.setCurrentStation(-1); // Попытка установить отрицательную станцию
+        radio.setCurrentStation(-1);
         assertEquals(0, radio.getCurrentStation());
     }
 
